@@ -33,6 +33,8 @@ public class Simple
 
 	private static final Logger logger = LoggerFactory.getLogger(Simple.class);
 
+    private String name;
+
 	public int square(int x)
 	{
 		if (logger.isDebugEnabled())
@@ -104,4 +106,14 @@ public class Simple
 
 		return result;
 	}
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(final String name)
+    {
+        this.name = name;
+    }
 }

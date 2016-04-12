@@ -49,13 +49,12 @@
 			Instrument the application classes, writing the
 			instrumented classes into ${build.instrumented.dir}.
 		-->
-		<cobertura-instrument todir="${instrumented.dir}">
+		<cobertura-instrument todir="${instrumented.dir}" ignoreTrivial="true">
 			<!--
 				The following line causes instrument to ignore any
 				source line containing a reference to slf4j/logback, for the
 				purposes of coverage reporting.
 			-->
-			<ignore regex="org.slf4j.*" />
 
 			<fileset dir="${classes.dir}">
 				<!--
