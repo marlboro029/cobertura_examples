@@ -1,19 +1,19 @@
 /**
  * Cobertura - http://cobertura.sourceforge.net/
- *
+ * <p>
  * Copyright (C) 2003 jcoverage ltd.
  * Copyright (C) 2005 Mark Doliner <thekingant@users.sourceforge.net>
- *
+ * <p>
  * Cobertura is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 2 of the License,
  * or (at your option) any later version.
- *
+ * <p>
  * Cobertura is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with Cobertura; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
@@ -31,81 +31,81 @@ import org.slf4j.LoggerFactory;
 public class Simple
 {
 
-	private static final Logger logger = LoggerFactory.getLogger(Simple.class);
+    private static final Logger logger = LoggerFactory.getLogger(Simple.class);
 
     private String name;
 
-	public int square(int x)
-	{
-		if (logger.isDebugEnabled())
-		{
-			logger.debug("x: " + x);
-		}
+    public int square(int x)
+    {
+        if (logger.isDebugEnabled())
+        {
+            logger.debug("x: " + x);
+        }
 
-		int result = x * x;
+        int result = x * x;
 
-		if (logger.isDebugEnabled())
-		{
-			logger.debug("result: " + result);
-		}
+        if (logger.isDebugEnabled())
+        {
+            logger.debug("result: " + result);
+        }
 
-		return result;
-	}
+        return result;
+    }
 
-	public int f(int x)
-	{
-		if (logger.isDebugEnabled())
-		{
-			logger.debug("x: " + x);
-		}
+    public int f(int x)
+    {
+        if (logger.isDebugEnabled())
+        {
+            logger.debug("x: " + x);
+        }
 
-		if (x < 0)
-		{
-			if (logger.isDebugEnabled())
-			{
-				logger.debug("negative x");
-			}
+        if (x < 0)
+        {
+            if (logger.isDebugEnabled())
+            {
+                logger.debug("negative x");
+            }
 
-			return square(x);
-		}
-		else if ((x >= 0) && (x <= 5))
-		{
-			if (logger.isDebugEnabled())
-			{
-				logger.debug("0<=x<=5");
-			}
+            return square(x);
+        }
+        else if ((x >= 0) && (x <= 5))
+        {
+            if (logger.isDebugEnabled())
+            {
+                logger.debug("0<=x<=5");
+            }
 
-			return x + 3;
-		}
-		else
-		{
-			return 2 * x;
-		}
-	}
+            return x + 3;
+        }
+        else
+        {
+            return 2 * x;
+        }
+    }
 
-	public int sum(Collection c)
-	{
-		int result = 0;
+    public int sum(Collection c)
+    {
+        int result = 0;
 
-		for (Iterator i = c.iterator(); i.hasNext();)
-		{
-			int value = ((Number)i.next()).intValue();
+        for (Iterator i = c.iterator(); i.hasNext(); )
+        {
+            int value = ((Number) i.next()).intValue();
 
-			if (logger.isDebugEnabled())
-			{
-				logger.debug("value: " + value);
-			}
+            if (logger.isDebugEnabled())
+            {
+                logger.debug("value: " + value);
+            }
 
-			result += value;
-		}
+            result += value;
+        }
 
-		if (logger.isDebugEnabled())
-		{
-			logger.debug("result: " + result);
-		}
+        if (logger.isDebugEnabled())
+        {
+            logger.debug("result: " + result);
+        }
 
-		return result;
-	}
+        return result;
+    }
 
     public String getName()
     {
