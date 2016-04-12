@@ -22,11 +22,10 @@
 
 package com.example.simple;
 
-import java.util.Collection;
-import java.util.Iterator;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class Simple
 {
@@ -59,7 +58,17 @@ public class Simple
             logger.debug("x: " + x);
         }
 
-        if (x < 0)
+        if ((x >= 0) && (x <= 5))
+        {
+            if (logger.isDebugEnabled())
+            {
+                logger.debug("0<=x<=5");
+            }
+
+            return x + 3;
+
+        }
+        else if (x < 0)
         {
             if (logger.isDebugEnabled())
             {
@@ -68,29 +77,18 @@ public class Simple
 
             return square(x);
         }
-        else if ((x >= 0) && (x <= 5))
-        {
-            if (logger.isDebugEnabled())
-            {
-                logger.debug("0<=x<=5");
-            }
-
-            return x + 3;
-        }
         else
         {
             return 2 * x;
         }
     }
 
-    public int sum(Collection c)
+    public int sum(List<Integer> c)
     {
         int result = 0;
 
-        for (Iterator i = c.iterator(); i.hasNext(); )
+        for (final Integer value : c)
         {
-            int value = ((Number) i.next()).intValue();
-
             if (logger.isDebugEnabled())
             {
                 logger.debug("value: " + value);
