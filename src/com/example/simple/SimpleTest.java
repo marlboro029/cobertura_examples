@@ -24,7 +24,7 @@ package com.example.simple;
 
 import junit.framework.TestCase;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleTest extends TestCase
@@ -54,7 +54,7 @@ public class SimpleTest extends TestCase
 
     public void testSum()
     {
-        List<Integer> c = new LinkedList<>();
+        List<Integer> c = new ArrayList<>();
         c.add(3);
         c.add(5);
         c.add(8);
