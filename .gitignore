@@ -3,3 +3,5 @@
 /classes/**/*
 /instrumented/**/*
 /reports/**/*
+
+cobertura.ser
