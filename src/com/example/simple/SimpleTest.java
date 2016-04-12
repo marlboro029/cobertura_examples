@@ -47,6 +47,7 @@ public class SimpleTest extends TestCase
 	{
 		assertEquals(1, simple.f(-1));
 		assertEquals(12, simple.f(6));
+		assertEquals(7, simple.f(4));
 	}
 
 	public void testSum()
