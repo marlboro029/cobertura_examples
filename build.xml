@@ -55,7 +55,6 @@
                 source line containing a reference to slf4j/logback, for the
                 purposes of coverage reporting.
             -->
-            <ignore regex="org.slf4j.*" />
 
             <fileset dir="${classes.dir}">
                 <!--
