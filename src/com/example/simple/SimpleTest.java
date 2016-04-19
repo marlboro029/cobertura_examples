@@ -22,42 +22,47 @@
 
 package com.example.simple;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleTest extends TestCase
+public class SimpleTest
 {
-
     final Simple simple = new Simple();
 
-    public SimpleTest(String nm)
-    {
-        super(nm);
-    }
-
+    @Test
     public void testSquare()
     {
-        assertEquals(1, simple.square(1));
-        assertEquals(1, simple.square(-1));
+        Assert.assertEquals(1, simple.square(1));
+        Assert.assertEquals(1, simple.square(-1));
     }
 
+    @Test
+    public void testSquare1()
+    {
+        Assert.assertEquals(1, simple.square(1));
+        Assert.assertEquals(1, simple.square(-1));
+    }
+
+    @Test
     public void testF()
     {
-        assertEquals(1, simple.f(-1));
-        assertEquals(12, simple.f(6));
-        assertEquals(7, simple.f(4));
-        assertEquals(3, simple.f(0));
-        assertEquals(8, simple.f(5));
+        Assert.assertEquals(1, simple.f(-1));
+        Assert.assertEquals(12, simple.f(6));
+        Assert.assertEquals(7, simple.f(4));
+        Assert.assertEquals(3, simple.f(0));
+        Assert.assertEquals(8, simple.f(5));
     }
 
+    @Test
     public void testSum()
     {
         List<Integer> c = new ArrayList<>();
         c.add(3);
         c.add(5);
         c.add(8);
-        assertEquals(16, simple.sum(c));
+        Assert.assertEquals(16, simple.sum(c));
     }
 }
