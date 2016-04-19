@@ -84,7 +84,7 @@
             <classpath refid="cobertura.classpath"/>
 
             <formatter type="xml"/>
-            <test name="${testcase}" todir="${reports.xml.dir}" if="testcase"/>
+            <!--<test name="${testcase}" todir="${reports.xml.dir}" if="testcase"/>-->
             <batchtest todir="${reports.xml.dir}" unless="testcase">
                 <fileset dir="${src.dir}">
                     <include name="**/*Test.java"/>
