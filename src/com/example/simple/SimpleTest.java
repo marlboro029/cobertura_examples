@@ -24,24 +24,50 @@ package com.example.simple;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RunWith(PowerMockRunner.class)
 public class SimpleTest
 {
-    final Simple simple = new Simple();
-
     @Test
     public void testSquare()
     {
+        final Simple simple = new Simple();
         Assert.assertEquals(1, simple.square(1));
         Assert.assertEquals(1, simple.square(-1));
     }
 
     @Test
-    public void testSquare1()
+    @PrepareForTest(LoggerFactory.class)
+    public void testSquareLogTrue()
     {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(true);
+        final Simple simple = new Simple();
+        Assert.assertEquals(1, simple.square(1));
+        Assert.assertEquals(1, simple.square(-1));
+    }
+
+    @Test
+    @PrepareForTest(LoggerFactory.class)
+    public void testSquareLogFalse()
+    {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(false);
+        final Simple simple = new Simple();
         Assert.assertEquals(1, simple.square(1));
         Assert.assertEquals(1, simple.square(-1));
     }
@@ -49,6 +75,37 @@ public class SimpleTest
     @Test
     public void testF()
     {
+        final Simple simple = new Simple();
+        Assert.assertEquals(1, simple.f(-1));
+        Assert.assertEquals(12, simple.f(6));
+        Assert.assertEquals(7, simple.f(4));
+        Assert.assertEquals(3, simple.f(0));
+        Assert.assertEquals(8, simple.f(5));
+    }
+    @Test
+    @PrepareForTest(LoggerFactory.class)
+    public void testFLogTrue()
+    {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(true);
+        final Simple simple = new Simple();
+        Assert.assertEquals(1, simple.f(-1));
+        Assert.assertEquals(12, simple.f(6));
+        Assert.assertEquals(7, simple.f(4));
+        Assert.assertEquals(3, simple.f(0));
+        Assert.assertEquals(8, simple.f(5));
+    }
+    @Test
+    @PrepareForTest(LoggerFactory.class)
+    public void testFLogFalse()
+    {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(false);
+        final Simple simple = new Simple();
         Assert.assertEquals(1, simple.f(-1));
         Assert.assertEquals(12, simple.f(6));
         Assert.assertEquals(7, simple.f(4));
@@ -59,6 +116,39 @@ public class SimpleTest
     @Test
     public void testSum()
     {
+        final Simple simple = new Simple();
+        List<Integer> c = new ArrayList<>();
+        c.add(3);
+        c.add(5);
+        c.add(8);
+        Assert.assertEquals(16, simple.sum(c));
+    }
+
+    @Test
+    @PrepareForTest(LoggerFactory.class)
+    public void testSumLogTrue()
+    {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(true);
+        final Simple simple = new Simple();
+        List<Integer> c = new ArrayList<>();
+        c.add(3);
+        c.add(5);
+        c.add(8);
+        Assert.assertEquals(16, simple.sum(c));
+    }
+    
+    @Test
+    @PrepareForTest(LoggerFactory.class)
+    public void testSumLogFalse()
+    {
+        PowerMockito.spy(LoggerFactory.class);
+        Logger logger = Mockito.spy(Logger.class);
+        Mockito.when(LoggerFactory.getLogger(Simple.class)).thenReturn(logger);
+        Mockito.when(logger.isDebugEnabled()).thenReturn(false);
+        final Simple simple = new Simple();
         List<Integer> c = new ArrayList<>();
         c.add(3);
         c.add(5);

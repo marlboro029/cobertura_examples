@@ -1,7 +1,6 @@
 package com.example.simple;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.text.StrBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,11 +12,12 @@ public class AA
 
     public String appendNames()
     {
-        StrBuilder sb = new StrBuilder();
+        StringBuilder sb = new StringBuilder();
         sb.append("Hello");
         if (StringUtils.isNotEmpty(getName()))
         {
-            sb.append(" " + getName());
+            sb.append(" ");
+            sb.append(getName());
         }
         if (logger.isDebugEnabled())
         {

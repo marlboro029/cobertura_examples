@@ -77,6 +77,8 @@
                 source line containing a reference to slf4j/logback, for the
                 purposes of coverage reporting.
             -->
+            <!--<ignore regex="org.slf4j.*"/>-->
+            <!--<ignore regex="org.apache.commons.lang3.*"/>-->
 
             <fileset dir="${classes.dir}">
                 <!--
