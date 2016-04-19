@@ -17,7 +17,7 @@ public class AAUnitTest
 
 	}
 
-	//@Test
+	@Test
 	public void appendNamesNull() throws Exception
 	{
 
