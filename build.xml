@@ -56,7 +56,6 @@
                 purposes of coverage reporting.
             -->
             <ignore regex="org.slf4j.*" />
-            <ignore regex="org.apache.*" />
 
             <fileset dir="${classes.dir}">
                 <!--
