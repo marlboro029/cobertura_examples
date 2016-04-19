@@ -80,6 +80,7 @@
             <!--<ignore regex="org.slf4j.*"/>-->
             <!--<ignore regex="org.apache.commons.lang3.*"/>-->
 
+            <ignoremethodannotation annotationname="com.example.simple.CoberturaIgnore"/>
             <fileset dir="${classes.dir}">
                 <!--
                     Instrument all the application classes, but
@@ -87,6 +88,7 @@
                 -->
                 <include name="**/*.class"/>
                 <exclude name="**/*Test.class"/>
+                <exclude name="**/CoberturaIgnore.class"/>
             </fileset>
         </cobertura-instrument>
     </target>

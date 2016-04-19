@@ -34,6 +34,7 @@ public class Simple
 
     private String name;
 
+    @CoberturaIgnore
     public int square(int x)
     {
         if (logger.isDebugEnabled())
